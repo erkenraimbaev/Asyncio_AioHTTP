@@ -12,7 +12,13 @@ async def download_file(url: str):
 
 
 async def main():
-    await download_file('https://download.com/image/')
+    urls = ['example.com', 'example1.com', 'example2.com']
+    responses = [download_file(url) for url in urls]
+    await asyncio.gather(*responses)
+    count = 0
+    for response in responses:
+        count += 1
+        print(f'{count}. {response}')
 
 
 asyncio.run(main())
