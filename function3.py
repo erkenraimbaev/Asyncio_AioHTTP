@@ -13,7 +13,7 @@ async def download_file(url: str):
 
 
 async def main():
-    urls = ['example.com', 'error.com', 'example2.com']
+    urls = ['error1.com', 'error.com', 'example2.com']
     tasks = []
     for url in urls:
         task = download_file(url)
